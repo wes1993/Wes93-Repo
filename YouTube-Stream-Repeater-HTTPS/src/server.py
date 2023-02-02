@@ -77,6 +77,8 @@ async def api_dl(
     )
 
 @app.get("/meta/{video_id}")
+def read_current_user(username: str = Depends(get_current_username)):
+    return {"username": username}
 async def api_meta(video_id: str):
     meta = query_meta(video_id)
 
@@ -101,6 +103,8 @@ def _remove_file(path: str) -> None:
     os.remove(path)
 
 @app.get("/sub/{video_id}")
+def read_current_user(username: str = Depends(get_current_username)):
+    return {"username": username}
 async def api_sub(background_tasks: BackgroundTasks, video_id: str, l: str = "en", f: str = "vtt"):
     if f not in ["vtt", "ass", "srt"] and not (l == "live_chat" and f == "json"):
         raise HTTPException(
