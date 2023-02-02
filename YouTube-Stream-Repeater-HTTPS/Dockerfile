@@ -7,7 +7,7 @@ RUN pip3  --disable-pip-version-check --no-cache-dir install -r /tmp/requirement
 RUN rm -v /tmp/requirements.txt
 RUN pip3 install -U yt-dlp
 
-RUN apt update && apt install -y ffmpeg libmagic-dev vi nano
+RUN apt update && apt install -y ffmpeg libmagic-dev vim nano
 
 # make the nonroot user
 RUN useradd user -m -s /usr/sbin/nologin
