@@ -4,6 +4,10 @@ version: "1.0.0"
 slug: "yt_str_srv"
 init: false
 arch:
+  - aarch64
   - amd64
+  - armhf
+  - armv7
+  - i386
 ports:
   4000/tcp: 4000
