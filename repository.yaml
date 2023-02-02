@@ -1,0 +1,5 @@
+
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Wes93 Repo
+url: 'https://github.com/wes1993/Wes93-Repo'
+maintainer: Stefano <wes93@hotmail.it>

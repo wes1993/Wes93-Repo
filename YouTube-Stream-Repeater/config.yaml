@@ -1,0 +1,9 @@
+name: "YouTube Stream Repeater"
+description: "YouTube Stream Repeater"
+version: "1.0.0"
+slug: "yt_str_srv"
+init: false
+arch:
+  - amd64
+ports:
+  4000/tcp: 4000
