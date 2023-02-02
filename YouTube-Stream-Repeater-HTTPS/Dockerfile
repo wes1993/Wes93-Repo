@@ -17,8 +17,8 @@ WORKDIR /home/user/app
 COPY ./src ./
 
 # fix ownership of stuff inside application folder
-RUN chown -R user:user .
+#RUN chown -R user:user .
 
 # run uvicorn as nonroot
-USER user
+#USER user
 CMD [ "python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "4443", "--ssl-keyfile=/ssl/privkey.pem", "--ssl-certfile=/ssl/fullchain.pem", "--no-server-header", "--workers", "8" ]
