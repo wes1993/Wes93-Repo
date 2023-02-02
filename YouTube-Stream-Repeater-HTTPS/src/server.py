@@ -38,43 +38,59 @@ def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
     return credentials.username
 
 @app.get("/dl/{video_id}")
-def read_current_user(username: str = Depends(get_current_username)):
-#    return {"username": username}
-    async def api_dl(
-        video_id: str,   # the video's ID (watch?v=<this>)
-        f: str = "best", # format 
-        sl: str = None,  # subtitle language to embed
-    ):
-        stream = stream_from_yt(video_id, f, sl)  
-        first_chunk = await stream.__anext__() # peek first chunk
+credentials: HTTPBasicCredentials = Depends(security)):
+current_username_bytes = credentials.username.encode("utf8")
+correct_username_bytes = b"stanleyjobson"
+is_correct_username = secrets.compare_digest(
+    current_username_bytes, correct_username_bytes
+)
+current_password_bytes = credentials.password.encode("utf8")
+correct_password_bytes = b"swordfish"
+is_correct_password = secrets.compare_digest(
+    current_password_bytes, correct_password_bytes
+)
+if not (is_correct_username and is_correct_password):
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Incorrect email or password",
+        headers={"WWW-Authenticate": "Basic"},
+    )
+
+async def api_dl(
+    video_id: str,   # the video's ID (watch?v=<this>)
+    f: str = "best", # format 
+    sl: str = None,  # subtitle language to embed
+):
+    stream = stream_from_yt(video_id, f, sl)  
+    first_chunk = await stream.__anext__() # peek first chunk
+
+    # guess filetype
+    m = magic.Magic(mime=True, uncompress=True)
+    mime_type = m.from_buffer(first_chunk)
+
+    # guess extension based on mimetype
+    ext = mimetypes.guess_extension(mime_type) or '.mkv' # fallback to mkv I guess
     
-        # guess filetype
-        m = magic.Magic(mime=True, uncompress=True)
-        mime_type = m.from_buffer(first_chunk)
+    print(f"[{video_id}]: download type: {mime_type} ({ext})")
     
-        # guess extension based on mimetype
-        ext = mimetypes.guess_extension(mime_type) or '.mkv' # fallback to mkv I guess
-        
-        print(f"[{video_id}]: download type: {mime_type} ({ext})")
-        
-        headers = {
-            "Content-Disposition": f"attachment;filename={video_id}{ext}"
-        }
-    
-        async def joined_stream():
-            # attach the first chunk back to the generator
-            yield first_chunk
-    
-            # pass on the rest
-            async for chunk in stream:
-                yield chunk
-    
-        # pass that to the user
-        return StreamingResponse(
-            joined_stream(),
-            media_type = mime_type,
-            headers = headers
-        )
+    headers = {
+        "Content-Disposition": f"attachment;filename={video_id}{ext}"
+    }
+
+    async def joined_stream():
+        # attach the first chunk back to the generator
+        yield first_chunk
+
+        # pass on the rest
+        async for chunk in stream:
+            yield chunk
+
+    # pass that to the user
+    return StreamingResponse(
+        joined_stream(),
+        media_type = mime_type,
+        headers = headers
+    )
 
 @app.get("/meta/{video_id}")
 def read_current_user(username: str = Depends(get_current_username)):
