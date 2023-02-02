@@ -1,0 +1,12 @@
+name: "YouTube Stream Repeater HTTPS"
+description: "YouTube Stream Repeater HTTPS"
+version: "1.0.0"
+slug: "yt_str_srv_https"
+init: false
+arch:
+  - amd64
+ports:
+  4443/tcp: 4443
+map:
+  - config:rw
+  - ssl
