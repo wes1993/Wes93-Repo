@@ -21,4 +21,4 @@ RUN chown -R user:user .
 
 # run uvicorn as nonroot
 USER user
-CMD [ "python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "4443", "--no-server-header", "--workers", "8" ]
+CMD [ "python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "4443", "--ssl-keyfile=/ssl/privkey.pem", "--ssl-certfile=/ssl/fullchain.pem", "--no-server-header", "--workers", "8" ]
