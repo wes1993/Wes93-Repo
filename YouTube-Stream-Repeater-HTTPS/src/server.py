@@ -39,7 +39,7 @@ def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
 
 @app.get("/dl/{video_id}")
 def read_current_user(username: str = Depends(get_current_username)):
-    return {"username": username}
+#    return {"usernamedffdbfbfdbfbdfbfb": username}
 async def api_dl(
     video_id: str,   # the video's ID (watch?v=<this>)
     f: str = "best", # format 
