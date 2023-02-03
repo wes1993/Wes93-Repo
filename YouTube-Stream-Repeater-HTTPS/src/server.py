@@ -113,7 +113,7 @@ def _remove_file(path: str) -> None:
 #    return {"username": username}
 async def api_sub(background_tasks: BackgroundTasks, video_id: str, l: str = "en", f: str = "vtt"):
     username: str = Depends(get_current_username)
-    if username == "pluto"
+    if username == "pluto":
         if f not in ["vtt", "ass", "srt"] and not (l == "live_chat" and f == "json"):
             raise HTTPException(
                 status_code=400,
