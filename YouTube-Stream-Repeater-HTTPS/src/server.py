@@ -43,8 +43,6 @@ def read_current_user(username: str = Depends(get_current_username)):
 
 
 @app.get("/dl/{video_id}")
-#def read_current_user(username: str = Depends(get_current_username)):
-#    return {"username": username}
 async def api_dl(
     video_id: str,   # the video's ID (watch?v=<this>)
     f: str = "best", # format 
@@ -83,9 +81,7 @@ async def api_dl(
     )
 
 @app.get("/meta/{video_id}")
-#def read_current_user(username: str = Depends(get_current_username)):
-#    return {"username": username}
-async def api_meta(video_id: str):
+async def api_meta(video_id: str, username: str = Depends(get_current_username)):
     username: str = Depends(get_current_username)
     meta = query_meta(video_id)
     if meta is None:
@@ -109,22 +105,18 @@ def _remove_file(path: str) -> None:
     os.remove(path)
 
 @app.get("/sub/{video_id}")
-#def read_current_user(username: str = Depends(get_current_username)):
-#    return {"username": username}
-async def api_sub(background_tasks: BackgroundTasks, video_id: str, l: str = "en", f: str = "vtt"):
-    username: str = Depends(get_current_username)
-    if username == "pluto":
-        if f not in ["vtt", "ass", "srt"] and not (l == "live_chat" and f == "json"):
-            raise HTTPException(
-                status_code=400,
-                detail="Invalid subtitle format, valid options are: vtt, ass, srt"
-            )
-        
-        sub_file = download_subs(video_id, l, f)
-        
-        background_tasks.add_task(_remove_file, sub_file)
-        
-        return FileResponse(
-            sub_file,
-            filename=f"{video_id}.{l}.{f}"
+async def api_sub(background_tasks: BackgroundTasks, video_id: str, l: str = "en", f: str = "vtt", username: str = Depends(get_current_username)):
+    if f not in ["vtt", "ass", "srt"] and not (l == "live_chat" and f == "json"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid subtitle format, valid options are: vtt, ass, srt"
         )
+    
+    sub_file = download_subs(video_id, l, f)
+    
+    background_tasks.add_task(_remove_file, sub_file)
+    
+    return FileResponse(
+        sub_file,
+        filename=f"{video_id}.{l}.{f}"
+    )
