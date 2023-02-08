@@ -9,7 +9,7 @@ f = open('/data/options.json')
 
 data = json.load(f)
 print(data)
-#name = data["name"]  
+name = data['name']  
 #password = data["password"]  
 #print(name)  
 # Output: John  
