@@ -7,12 +7,13 @@ import secrets
 import json  
 f = open('/data/options.json')
 
-data = json.load(f)  
-name = data["name"]  
-password = data["password"]  
-print(name)  
+data = json.load(f)
+print(data)
+#name = data["name"]  
+#password = data["password"]  
+#print(name)  
 # Output: John  
-print(password)  
+#print(password)  
 # Output: 30 
 
 
