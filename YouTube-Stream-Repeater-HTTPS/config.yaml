@@ -1,6 +1,6 @@
 name: "YouTube Stream Repeater HTTPS"
 description: "YouTube Stream Repeater HTTPS"
-version: "1.0.18"
+version: "1.0.19"
 slug: "yt_str_srv_https"
 options:
   user: null
