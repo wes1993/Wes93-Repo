@@ -11,7 +11,7 @@ data = json.load(f)
 print(data)
 name = data['name']  
 #password = data["password"]  
-#print(name)  
+print(name)  
 # Output: John  
 #print(password)  
 # Output: 30 
