@@ -8,14 +8,10 @@ import json
 f = open('/data/options.json')
 
 data = json.load(f)
-print(data)
-name = data['name']  
-#password = data["password"]  
-print(name)  
-# Output: John  
-#print(password)  
-# Output: 30 
-
+user = data["user"]  
+password = data["password"]  
+print(user)  
+print(password)  
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.responses import StreamingResponse, JSONResponse, FileResponse
