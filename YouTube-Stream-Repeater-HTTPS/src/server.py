@@ -10,8 +10,6 @@ f = open('/data/options.json')
 data = json.load(f)
 user = data["user"]  
 password = data["password"]  
-print(user)  
-print(password)  
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.responses import StreamingResponse, JSONResponse, FileResponse
@@ -28,12 +26,12 @@ security = HTTPBasic()
 
 def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
     current_username_bytes = credentials.username.encode("utf8")
-    correct_username_bytes = b"pluto"
+    correct_username_bytes = bytes('user')
     is_correct_username = secrets.compare_digest(
         current_username_bytes, correct_username_bytes
     )
     current_password_bytes = credentials.password.encode("utf8")
-    correct_password_bytes = b"pippo"
+    correct_password_bytes = bytes('password')
     is_correct_password = secrets.compare_digest(
         current_password_bytes, correct_password_bytes
     )
