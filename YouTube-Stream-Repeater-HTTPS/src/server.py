@@ -4,6 +4,17 @@ import os
 import magic
 import secrets
 
+import json  
+f = open('/data/options.json')
+
+data = json.loads(f)  
+name = data["name"]  
+password = data["password"]  
+print(name)  
+# Output: John  
+print(password)  
+# Output: 30 
+
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.responses import StreamingResponse, JSONResponse, FileResponse
