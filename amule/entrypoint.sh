@@ -69,11 +69,11 @@ mod_auto_share() {
 AMULE_UID=${PUID:-1000}
 AMULE_GID=${PGID:-1000}
 
-AMULE_INCOMING=/incoming
-AMULE_TEMP=/temp
-AMULE_HOME=/home/amule/.aMule
-AMULE_CONF=${AMULE_HOME}/amule.conf
-REMOTE_CONF=${AMULE_HOME}/remote.conf
+AMULE_INCOMING=/media/amule/incoming
+AMULE_TEMP=/media/amule/temp
+AMULE_HOME=/media/amule/.aMule
+AMULE_CONF=/media/amule/.aMule/amule.conf
+REMOTE_CONF=/media/amule/.aMule/remote.conf
 KAD_NODES_DAT_URL="http://upd.emule-security.org/nodes.dat"
 
 # Create configuration files if don't exist

@@ -34,13 +34,13 @@ RUN ldd /usr/bin/alcc && \
     ldd /usr/bin/ed2k
 
 # Add entrypoint
-COPY entrypoint.sh /home/amule/entrypoint.sh
+COPY entrypoint.sh /media/amule/entrypoint.sh
 
-WORKDIR /home/amule
+WORKDIR /media/amule
 
 EXPOSE 4711/tcp 4712/tcp 4662/tcp 4665/udp 4672/udp
 
-ENTRYPOINT ["/home/amule/entrypoint.sh"]
+ENTRYPOINT ["/media/amule/entrypoint.sh"]
 
 # HELP
 #
