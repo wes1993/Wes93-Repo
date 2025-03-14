@@ -22,11 +22,11 @@ options:
   MOD_FIX_KAD_GRAPH_ENABLED: true
   MOD_FIX_KAD_BOOTSTRAP_ENABLED: true
 environment:
-  PUID: 1000
-  PGID: 1000
-  TZ: Europe/Rome
-  GUI_PWD: PIPPO
-  WEBUI_PWD: PLUTO
+  PUID: "1000"
+  PGID: "1000"
+  TZ: "Europe/Rome"
+  GUI_PWD: "PIPPO"
+  WEBUI_PWD: "PLUTO"
   MOD_AUTO_RESTART_ENABLED: "true"
   MOD_AUTO_RESTART_CRON: "0 6 * * *"
   MOD_AUTO_SHARE_ENABLED: "false"
