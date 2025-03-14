@@ -3,6 +3,8 @@ description: "Amule Service"
 version: "1.0.0"
 slug: "amule_srv"
 init: false
+ingress: true
+ingress_port: 4711
 options:
   AMULE_UID: 1000
   AMULE_GID: 1000
