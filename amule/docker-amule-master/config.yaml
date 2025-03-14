@@ -1,0 +1,21 @@
+name: "Amule"
+description: "Amule Service"
+version: "1.0.0"
+slug: "amule_srv"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+map:
+- addon_config:rw
+- share:rw
+- media:rw
+ports:
+  4711/tcp: 4711 # web ui
+  4712/tcp: 4712 # remote gui, webserver, cmd ...
+  4662/tcp: 4662 # ed2k tcp
+  4665/udp: 4665 # ed2k global search udp (tcp port +3)
+  4672/udp: 4672 # ed2k udp
