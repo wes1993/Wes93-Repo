@@ -1,6 +1,6 @@
 name: "Amule New"
 description: "Amule Service"
-version: "1.0.4"
+version: "1.0.5"
 slug: "amule_srv_new"
 init: false
 ingress: true
