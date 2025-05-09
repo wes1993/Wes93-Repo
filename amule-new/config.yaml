@@ -14,7 +14,7 @@ schema:
   GUI_PWD: str
   WEBUI_PWD: str
   KAD_NODES_DAT_URL: url?
-  MOD_AUTO_RESTART_ENABLED: str?
+  MOD_AUTO_RESTART_ENABLED: bool?
 init: false
 environment:
   PUID: "1000"
