@@ -1,0 +1,23 @@
+---
+configuration:
+  GUI_PWD:
+    name: Amule GUI Password
+    description: >-
+      This option allows you to define the Amule GUI Password to be used with Amule Application.
+  WEBUI_PWD:
+    name: Amule WEBUI Password
+    description: >-
+      This option allows you to define the Amule WEBUI Password to be used when accessing from browser on HTTP port.
+  KAD_NODES_DAT_URL:
+    name: URL of KAD Server Nodes
+    description: >-
+      Define the KAD Server Nodes URL
+  MOD_AUTO_RESTART_ENABLED:
+    name: Enable Autorestart
+    description: >-
+      If set to `true`, the amule process will autorestart everyday at 6 AM
+  ssh_keys:
+    name: SSH Keys
+    description: >-
+      A list of filenames containing SSH private keys. These can be used to
+      allow for access to remote git repositories.
