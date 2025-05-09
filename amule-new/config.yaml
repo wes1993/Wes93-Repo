@@ -6,14 +6,14 @@ init: false
 ingress: true
 ingress_port: 4711
 options:
-  GUI_PWD: none
-  WEBUI_PWD: none
-  KAD_NODES_DAT_URL: "http://upd.emule-security.org/nodes.dat"
+  GUI_PWD:
+  WEBUI_PWD:
+  KAD_NODES_DAT_URL: http://upd.emule-security.org/nodes.dat
   MOD_AUTO_RESTART_ENABLED: true
 schema:
   GUI_PWD: str
   WEBUI_PWD: str
-  KAD_NODES_DAT_URL: url?
+  KAD_NODES_DAT_URL: str?
   MOD_AUTO_RESTART_ENABLED: bool?
 init: false
 environment:
