@@ -36,19 +36,19 @@ RUN ldd /usr/bin/alcc && \
 # Add entrypoint
 #COPY entrypoint.sh /media/amule/entrypoint.sh
 #RUN wget -q -O /media/amule/entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule-new/entrypoint.sh
-RUN wget -q -O entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule-new/entrypoint.sh
-RUN /bin/echo $(ls -latr /media/)
-RUN /bin/echo $(pwd)
-RUN /bin/echo $(df -h)
-RUN ls -latr /media/amule
-COPY entrypoint.sh /media/amule/entrypoint.sh
-RUN ls /media/amule/
+RUN wget -q -O /usr/share/amule/entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule-new/entrypoint.sh
+#RUN /bin/echo $(ls -latr /media/)
+#RUN /bin/echo $(pwd)
+#RUN /bin/echo $(df -h)
+#RUN ls -latr /media/amule
+#COPY entrypoint.sh /media/amule/entrypoint.sh
+#RUN ls /media/amule/
 
-WORKDIR /media/amule
+#WORKDIR /media/amule
 
 EXPOSE 4711/tcp 4712/tcp 4662/tcp 4665/udp 4672/udp
 
-ENTRYPOINT ["/media/amule/entrypoint.sh"]
+ENTRYPOINT ["/usr/share/amule/entrypoint.sh"]
 
 # HELP
 #
