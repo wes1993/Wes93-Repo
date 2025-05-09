@@ -118,7 +118,7 @@ if [ ! -d ${AMULE_HOME} ]; then
 fi
 
 if [ -z "${GUI_PWD}" ]; then
-    AMULE_GUI_PWD=$(4pwgen -s 1)
+    AMULE_GUI_PWD=$(pwgen -s 1)
 else
     AMULE_GUI_PWD="${GUI_PWD}"
 fi
