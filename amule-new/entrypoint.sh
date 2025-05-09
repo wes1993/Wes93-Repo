@@ -20,7 +20,7 @@ MOD_AUTO_RESTART_ENABLED="$(bashio::config 'MOD_AUTO_RESTART_ENABLED')"
 # Exit on error. For debug use set -x
 set -e
 
-sleep 30000
+sleep 3000
 
 mod_auto_restart() {
     MOD_AUTO_RESTART_ENABLED=${MOD_AUTO_RESTART_ENABLED:-"false"}
