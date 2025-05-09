@@ -1,5 +1,20 @@
 #!/usr/bin/env sh
+AMULE_UID=${PUID:-1000}
+AMULE_GID=${PGID:-1000}
+AMULE_INCOMING=/media/amule/incoming
+AMULE_TEMP=/media/amule/temp
+AMULE_HOME=/media/amule/.aMule
+AMULE_CONF=/media/amule/.aMule/amule.conf
+REMOTE_CONF=/media/amule/.aMule/remote.conf
 
+
+#Default Homeassisnat Addon Config Path
+CONFIG_PATH=/data/options.json
+#TARGET="$(bashio::config 'target')"
+KAD_NODES_DAT_URL="$(bashio::config 'KAD_NODES_DAT_URL')"
+GUI_PWD="$(bashio::config 'GUI_PWD')"
+WEBUI_PWD="$(bashio::config 'WEBUI_PWD')"
+MOD_AUTO_RESTART_ENABLED="$(bashio::config 'MOD_AUTO_RESTART_ENABLED')"
 # Exit on error. For debug use set -x
 set -e
 
@@ -66,16 +81,6 @@ mod_auto_share() {
     fi
 }
 
-AMULE_UID=${PUID:-1000}
-AMULE_GID=${PGID:-1000}
-
-AMULE_INCOMING=/media/amule/incoming
-AMULE_TEMP=/media/amule/temp
-AMULE_HOME=/media/amule/.aMule
-AMULE_CONF=/media/amule/.aMule/amule.conf
-REMOTE_CONF=/media/amule/.aMule/remote.conf
-KAD_NODES_DAT_URL="http://upd.emule-security.org/nodes.dat"
-
 # Create configuration files if don't exist
 AMULE_GROUP="amule"
 if grep -q ":${AMULE_GID}:" /etc/group; then
@@ -113,7 +118,7 @@ if [ ! -d ${AMULE_HOME} ]; then
 fi
 
 if [ -z "${GUI_PWD}" ]; then
-    AMULE_GUI_PWD=$(pwgen -s 14)
+    AMULE_GUI_PWD=$(4pwgen -s 1)
 else
     AMULE_GUI_PWD="${GUI_PWD}"
 fi
