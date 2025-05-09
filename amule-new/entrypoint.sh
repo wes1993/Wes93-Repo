@@ -10,8 +10,8 @@ REMOTE_CONF=/media/amule/.aMule/remote.conf
 
 #Default Homeassisnat Addon Config Path
 CONFIG_PATH=/data/options.json
-echo $(cat /data/options.json)
-echo $(ls -latr /data/)
+printf $(cat /data/options.json)
+printf $(ls -latr /data/)
 #TARGET="$(bashio::config 'target')"
 KAD_NODES_DAT_URL="$(bashio::config 'KAD_NODES_DAT_URL')"
 GUI_PWD="$(bashio::config 'GUI_PWD')"
