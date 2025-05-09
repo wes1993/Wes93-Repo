@@ -1,6 +1,6 @@
 name: "Amule New"
 description: "Amule Service"
-version: "1.0.0"
+version: "1.0.1"
 slug: "amule_srv_new"
 init: false
 ingress: true
@@ -13,7 +13,7 @@ options:
 schema:
   GUI_PWD: str
   WEBUI_PWD: str
-  KAD_NODES_DAT_URL: str?
+  KAD_NODES_DAT_URL: url?
   MOD_AUTO_RESTART_ENABLED: str?
 init: false
 environment:
