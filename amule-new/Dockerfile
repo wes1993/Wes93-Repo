@@ -43,7 +43,7 @@ RUN wget -q -O /usr/share/amule/entrypoint.sh https://raw.githubusercontent.com/
 #RUN ls -latr /media/amule
 #COPY entrypoint.sh /media/amule/entrypoint.sh
 #RUN ls /media/amule/
-
+RUN chmod 777 /usr/share/amule/entrypoint.sh
 #WORKDIR /media/amule
 
 EXPOSE 4711/tcp 4712/tcp 4662/tcp 4665/udp 4672/udp
