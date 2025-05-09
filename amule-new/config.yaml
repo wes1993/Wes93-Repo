@@ -1,0 +1,54 @@
+name: "Amule"
+description: "Amule Service"
+version: "1.0.0"
+slug: "amule_srv"
+init: false
+ingress: true
+ingress_port: 4711
+options:
+  AMULE_UID: 1000
+  AMULE_GID: 1000
+  AMULE_INCOMING: /media/amule/incoming
+  AMULE_TEMP: /media/amule/temp
+  AMULE_HOME: /media/amule/.aMule
+  AMULE_CONF: /media/amule/.aMule/amule.conf
+  REMOTE_CONF: /media/amule/.aMule/remote.conf
+  KAD_NODES_DAT_URL: "http://upd.emule-security.org/nodes.dat"
+  TZ: Europe/Rome
+  GUI_PWD: none
+  WEBUI_PWD: none
+  MOD_AUTO_RESTART_ENABLED: true
+  MOD_AUTO_RESTART_CRON: 0 6 * * *
+  MOD_AUTO_SHARE_ENABLED: false
+  MOD_AUTO_SHARE_DIRECTORIES: /incoming;/my_movies
+  MOD_FIX_KAD_GRAPH_ENABLED: true
+  MOD_FIX_KAD_BOOTSTRAP_ENABLED: true
+environment:
+  PUID: "1000"
+  PGID: "1000"
+  TZ: "Europe/Rome"
+  GUI_PWD: "PIPPO"
+  WEBUI_PWD: "PLUTO"
+  MOD_AUTO_RESTART_ENABLED: "true"
+  MOD_AUTO_RESTART_CRON: "0 6 * * *"
+  MOD_AUTO_SHARE_ENABLED: "false"
+  MOD_AUTO_SHARE_DIRECTORIES: "/incoming;/my_movies"
+  MOD_FIX_KAD_GRAPH_ENABLED: "true"
+  MOD_FIX_KAD_BOOTSTRAP_ENABLED: "true"
+  
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+map:
+- addon_config:rw
+- share:rw
+- media:rw
+ports:
+  4711/tcp: 4711 # web ui
+  4712/tcp: 4712 # remote gui, webserver, cmd ...
+  4662/tcp: 4662 # ed2k tcp
+  4665/udp: 4665 # ed2k global search udp (tcp port +3)
+  4672/udp: 4672 # ed2k udp
