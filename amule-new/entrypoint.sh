@@ -8,11 +8,8 @@ AMULE_CONF=/media/amule/.aMule/amule.conf
 REMOTE_CONF=/media/amule/.aMule/remote.conf
 
 
-#Default Homeassisnat Addon Config Path
-#CONFIG_PATH=/data/options.json
-#printf $(cat /data/options.json)
-#printf $(ls -latr /data/)
-#TARGET="$(bashio::config 'target')"
+#Default Homeassistant Addon Config
+
 KAD_NODES_DAT_URL=$(jq -r '.KAD_NODES_DAT_URL' /data/options.json)
 GUI_PWD=$(jq -r '.GUI_PWD' /data/options.json)
 WEBUI_PWD=$(jq -r '.WEBUI_PWD' /data/options.json)
@@ -20,7 +17,7 @@ MOD_AUTO_RESTART_ENABLED=$(jq -r '.MOD_AUTO_RESTART_ENABLED' /data/options.json)
 # Exit on error. For debug use set -x$
 set -e
 
-sleep 3000
+#sleep 3000
 
 mod_auto_restart() {
     MOD_AUTO_RESTART_ENABLED=${MOD_AUTO_RESTART_ENABLED:-"false"}
