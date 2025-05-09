@@ -16,8 +16,3 @@ configuration:
     name: Enable Autorestart
     description: >-
       If set to `true`, the amule process will autorestart everyday at 6 AM
-  ssh_keys:
-    name: SSH Keys
-    description: >-
-      A list of filenames containing SSH private keys. These can be used to
-      allow for access to remote git repositories.
