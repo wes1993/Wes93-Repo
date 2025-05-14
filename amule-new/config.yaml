@@ -9,11 +9,13 @@ options:
   GUI_PWD:
   WEBUI_PWD:
   KAD_NODES_DAT_URL: http://upd.emule-security.org/nodes.dat
+  ED2K_SERVERS_URL: http://upd.emule-security.org/server.met
   MOD_AUTO_RESTART_ENABLED: true
 schema:
   GUI_PWD: str
   WEBUI_PWD: str
   KAD_NODES_DAT_URL: str?
+  ED2K_SERVERS_URL: str?
   MOD_AUTO_RESTART_ENABLED: bool?
 init: false
 environment:
