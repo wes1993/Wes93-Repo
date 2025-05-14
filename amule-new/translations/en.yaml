@@ -12,6 +12,10 @@ configuration:
     name: URL of KAD Server Nodes
     description: >-
       Define the KAD Server Nodes URL
+  ED2K_SERVERS_URL:
+    name: URL of ED2K Servers List
+    description: >-
+      Define the URL of ED2K Servers List
   MOD_AUTO_RESTART_ENABLED:
     name: Enable Autorestart
     description: >-
