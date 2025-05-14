@@ -34,7 +34,7 @@ RUN ldd /usr/bin/alcc && \
 # Add entrypoint
 #COPY entrypoint.sh /media/amule/entrypoint.sh
 #RUN wget -q -O /media/amule/entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule-new/entrypoint.sh
-RUN wget -q -O /usr/share/amule/entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule-new/entrypoint.sh
+RUN wget -q -O /usr/share/amule/entrypoint.sh https://raw.githubusercontent.com/wes1993/Wes93-Repo/refs/heads/main/amule/entrypoint.sh
 #RUN /bin/echo $(ls -latr /media/)
 #RUN /bin/echo $(pwd)
 #RUN /bin/echo $(df -h)
