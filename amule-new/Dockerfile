@@ -15,8 +15,6 @@ RUN AMULEWEBUI_RELOADED_COMMIT=7c708c9ed95e5298fd45fea232a9341643eb7c66 && \
 
 FROM alpine:edge
 
-LABEL maintainer="ngosang@hotmail.es"
-
 # Install packages
 RUN apk add --no-cache libedit libgcc libintl libpng libstdc++ libupnp musl wxwidgets zlib tzdata pwgen mandoc curl jq && \
     apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing crypto++
