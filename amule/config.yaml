@@ -1,7 +1,7 @@
-name: "Amule New"
-description: "Amule Service"
+name: "Amule"
+description: "Amule Server"
 version: "1.0"
-slug: "amule_srv_new"
+slug: "amule_srv"
 init: false
 ingress: true
 ingress_port: 4711
