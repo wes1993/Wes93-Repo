@@ -5,7 +5,7 @@
 
 [aMule](https://github.com/amule-project/amule) is a multi-platform client for the ED2K file sharing network and based on the windows client eMule. aMule started in August 2003, as a fork of xMule, which is a fork of lMule.
 
-[![Download Screenshot](doc/screenshot.png)]
+![Download Screenshot](doc/screenshot.png)
 
 Inspired by [ngosang](https://github.com/ngosang/docker-amule/releases) work.
 
