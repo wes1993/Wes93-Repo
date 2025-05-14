@@ -11,6 +11,7 @@ REMOTE_CONF=/media/amule/.aMule/remote.conf
 #Default Homeassistant Addon Config
 
 KAD_NODES_DAT_URL=$(jq -r '.KAD_NODES_DAT_URL' /data/options.json)
+ED2K_SERVERS_URL=$(jq -r '.ED2K_SERVERS_URL' /data/options.json)
 GUI_PWD=$(jq -r '.GUI_PWD' /data/options.json)
 WEBUI_PWD=$(jq -r '.WEBUI_PWD' /data/options.json)
 MOD_AUTO_RESTART_ENABLED=$(jq -r '.MOD_AUTO_RESTART_ENABLED' /data/options.json)
@@ -234,7 +235,7 @@ ShowAllNotCats=0
 SmartIdState=0
 DropSlowSources=0
 KadNodesUrl=${KAD_NODES_DAT_URL}
-Ed2kServersUrl=http://upd.emule-security.org/server.met
+Ed2kServersUrl=${ED2K_SERVERS_URL}
 ShowRatesOnTitle=0
 GeoLiteCountryUpdateUrl=http://mailfud.org/geoip-legacy/GeoIP.dat.gz
 StatsServerName=Shorty ED2K stats
