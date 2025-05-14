@@ -18,6 +18,7 @@ schema:
   ED2K_SERVERS_URL: str?
   MOD_AUTO_RESTART_ENABLED: bool?
 init: false
+panel_icon: mdi:download
 environment:
   PUID: "1000"
   PGID: "1000"
