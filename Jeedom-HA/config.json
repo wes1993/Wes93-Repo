@@ -3,28 +3,21 @@
   "slug": "jeedom_ha",
   "description": "Jeedom Home Automation Platform",
   "version": "0.0.0",
-
   "arch": ["amd64", "arm64"],
-
   "startup": "services",
   "boot": "auto",
-
   "image": "jeedom/jeedom",
-
   "ports": {
     "80/tcp": 40080,
     "443/tcp": 40443
   },
   "ports_description": {
-    "80/tcp": "Jeedom Web InterfaceHTTP"
-    "443/tcp": "Jeedom Web Interface HTTPS"
+    "80/tcp": "Jeedom Web Interface (HTTP)",
+    "443/tcp": "Jeedom Web Interface (HTTPS)"
   },
-
   "ingress": true,
   "ingress_port": 80,
-
   "watchdog": "http://[HOST]:[PORT:80]",
-
   "map": [
     "addon_config:rw"
   ]
