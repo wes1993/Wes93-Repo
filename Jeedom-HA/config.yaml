@@ -16,6 +16,7 @@ ingress: true
 ingress_port: 80
 watchdog: "http://[HOST]:[PORT:80]"
 map:
-  - config:/data          # configurazioni addon generali
-  - html:/var/www/html    # HTML di Jeedom
-  - db:/var/lib/mysql     # database di Jeedom
+  - name: html:rw
+    target: /var/www/html
+  - name: db:rw
+    target: /var/lib/mysql
