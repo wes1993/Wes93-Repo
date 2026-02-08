@@ -19,6 +19,6 @@ map:
   - type: addon_config
     read_only: False
     path: /var/lib/mysql
-  - type: addon_config
+  - type: all_addon_configs
     read_only: False
     path: /var/www/html
