@@ -16,7 +16,9 @@ ingress: true
 ingress_port: 80
 watchdog: "http://[HOST]:[PORT:80]"
 map:
-  - name: html:rw
-    target: /var/www/html
-  - name: db:rw
-    target: /var/lib/mysql
+  - type: addon_config
+    read_only: False
+    path: /var/lib/mysql
+  - type: addon_config
+    read_only: False
+    path: /var/www/html
