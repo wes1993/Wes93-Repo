@@ -7,7 +7,7 @@ init: false
 
 arch:
   - amd64
-  - arm64
+  - aarch64
 
 startup: "services"
 boot: "auto"
