@@ -1,27 +1,19 @@
 name: "Jeedom"
 description: "Jeedom Home Automation Platform"
-version: "0.0.0"
+version: "4.4"
 slug: "jeedom_ha"
-
 init: false
-
 arch:
   - amd64
   - aarch64
-
 startup: "services"
 boot: "auto"
-
 image: "jeedom/jeedom"
-
 ports:
   80/tcp: 40080
   443/tcp: 40443
-
 ingress: true
 ingress_port: 80
-
 watchdog: "http://[HOST]:[PORT:80]"
-
 map:
   - addon_config:rw
