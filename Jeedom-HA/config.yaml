@@ -1,6 +1,6 @@
 name: "Jeedom"
 description: "Jeedom Home Automation Platform"
-version: "4.4"
+version: "4.5"
 slug: "jeedom_ha"
 init: false
 arch:
